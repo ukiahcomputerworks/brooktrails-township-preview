@@ -12,6 +12,11 @@ const path=require('node:path');
       await page.locator(`[data-gather-choice="${venue}"]`).focus();
       if(await page.locator(`[data-gather-choice="${venue}"]`).evaluate(element=>getComputedStyle(element).outlineStyle)==='none')throw new Error('Keyboard focus is missing');
       const panel=page.locator('#parks-panel-gather');
+      const typography=await page.locator('[data-gather-detail]:visible').evaluate(el=>{
+        const keys=['fontFamily','fontSize','fontWeight','lineHeight','letterSpacing','textTransform'];
+        return ['small','h4'].map(tag=>keys.map(key=>getComputedStyle(el.querySelector(tag))[key]).join('|'));
+      });
+      if(typography[0]!==typography[1])throw new Error('Rent The and venue heading typography differ');
       await panel.screenshot({path:path.join('evidence',process.env.SITE_BASE?'test-output-live':'test-output',`gather-${width}-${venue}.png`)});
       console.log(JSON.stringify({width,venue,status:response?.status(),visibleTickets:await page.locator('[data-gather-detail]:visible').count(),height:(await panel.boundingBox()).height,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)}));
     }
