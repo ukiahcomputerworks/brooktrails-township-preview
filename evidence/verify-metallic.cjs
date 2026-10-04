@@ -7,9 +7,22 @@ const fs=require('node:fs');
  fs.mkdirSync(out,{recursive:true});
  for(const width of [390,1440]){
   const page=await browser.newPage({viewport:{width,height:900}});
+  for(const route of ['','services','water','parks','planning','government','history','moving','resources','contact']){
+   await page.goto(base+'/'+(route?route+'/':'')+(process.env.SITE_BASE?'':'index.html'));
+   const wrong=await page.locator('.button').evaluateAll(els=>els.filter(el=>!getComputedStyle(el).backgroundImage.includes('rgb(237, 255, 207)')||getComputedStyle(el,'::before').animationName!=='emerald-metal-sweep').length);
+   if(wrong)throw Error('Unmatched shared button on '+route);
+  }
+  await page.goto(base+'/parks/'+(process.env.SITE_BASE?'':'index.html')+'#parks-panel-golf');
+  await page.waitForTimeout(3500);
+  const golf=page.locator('.golf-phone');
+  if(await golf.evaluate(el=>getComputedStyle(el).position)!=='absolute')throw Error('Golf reveal position changed');
+  if(!await golf.evaluate(el=>getComputedStyle(el).backgroundImage.includes('rgb(237, 255, 207)')))throw Error('Golf metal missing');
+  await golf.screenshot({path:out+'/metallic-golf-'+width+'.png'});
   for(const route of ['parks','contact']){
    await page.goto(base+'/'+route+'/'+(process.env.SITE_BASE?'':'index.html')+(route==='parks'?'#parks-panel-gather':''));
+   if(route==='parks')await page.reload();
    const button=page.locator(route==='parks'?'.gather-ticket:visible':'.district-desk-course');
+   if(route==='contact'&&await page.locator('.secure-contact-note').count())throw Error('Removed contact callout remains');
    if(await button.locator('a,button').count())throw Error('Nested action');
    const href=await button.getAttribute('href');
    if(route==='contact'&&href!=='tel:+17074596761')throw Error('Call target changed');

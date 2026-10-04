@@ -71,4 +71,6 @@ The generated pages use one shared stylesheet and one progressive-enhancement sc
 
 ## Metallic emerald action variant — 2026-10-04
 
+Expanded to every shared .button action (including light, ghost, outline and replay variants) and the golfer's phone reveal. Navigation, text links, story/shelf selectors, rustic trail-sign links, and the golfer sprite remain separate roles. Common material styling does not change positioning or reveal timing. Plain-text buttons use a behind-text sweep; the obsolete hover-only overlay is removed.
+
 Gathering's selected application ticket is one full-surface anchor. The District Desk course telephone tile shares its polished green metal variant, translated from Alpha's actual --alpha-gold-material and gold-button sweep: seven reflection bands at 105 degrees, bright mint highlights, green shadow bands, beveled edge, and an 88-percent white diagonal sweep every 4.8 seconds. Dark ink text sits above the moving shine. Existing PDF/tel targets remain; reduced-motion disables the sweep. The prior dark brushed treatment was rejected by the owner and is superseded. No Fire or production changes.
