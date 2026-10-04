@@ -17,6 +17,6 @@ These original inline SVG illustrations are explicitly labeled as illustrations,
 | Staff handoff | District Desk utility | Contextual gathering prompt, not an additional hub |
 | Motion | Reduced-motion site preference | Selection-triggered doors/lights, disabled under reduced motion |
 
-`.gather-*` styles are scoped to the new component. All generated routes receive cache key `20261004-2`. Existing route-by-component typography, navigation, hero fit, and field-stage fit checks remain in the full browser suite. The new tests exercise both venues, exclusive ticket visibility, exact PDF hrefs, 44 px controls, keyboard focus, and the reservation boundary. `verify-gathering.cjs` captures both states at 390×844, 1080×583, and 1440×1000 and checks reduced-motion transitions.
+`.gather-*` styles are scoped to the new component. All generated routes receive cache key `20261004-3`. Existing route-by-component typography, navigation, hero fit, and field-stage fit checks remain in the full browser suite. The new tests exercise both venues, exclusive ticket visibility, exact PDF hrefs, 44 px controls, keyboard focus, and the reservation boundary. `verify-gathering.cjs` captures both states at 390×844, 1080×583, and 1440×1000 and checks reduced-motion transitions.
 
 No Fire implementation or production-site change is part of this release. Owner acceptance remains open under COM-415.

@@ -15,7 +15,12 @@ const fs=require('node:fs');
    if(route==='contact'&&href!=='tel:+17074596761')throw Error('Call target changed');
    const style=await button.evaluate(el=>({background:getComputedStyle(el).backgroundImage,animation:getComputedStyle(el,'::before').animationName}));
    if(!style.background.includes('linear-gradient')||style.animation!=='emerald-metal-sweep')throw Error('Metal treatment missing');
-   await button.screenshot({path:out+'/metallic-'+route+'-'+width+'.png'});
+   const frames=[];
+   for(const time of [0,600]){
+    await button.evaluate((el,time)=>{for(const a of el.getAnimations({subtree:true})){if(a.animationName==='emerald-metal-sweep'){a.pause();a.currentTime=time;}}},time);
+    frames.push(await button.screenshot({path:out+'/metallic-'+route+'-'+width+'-'+time+'.png'}));
+   }
+   if(frames[0].equals(frames[1]))throw Error('Sweep produces no visible frame change');
    await page.emulateMedia({reducedMotion:'reduce'});
    if(await button.evaluate(el=>getComputedStyle(el,'::before').animationName)!=='none')throw Error('Reduced motion failure');
    await page.emulateMedia({reducedMotion:'no-preference'});
