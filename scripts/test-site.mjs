@@ -320,7 +320,7 @@ try {
             if (!await gathering.locator('.gather-confirm').innerText().then(text => text.includes('not a reservation'))) browserErrors.push(`${viewport.name} ${route}: gathering lacks staff-confirmation boundary`);
             const parkChoices = await tabs.locator('strong').allTextContents();
             const parkNumbers = await tabs.locator(':scope > span').allTextContents();
-            if (parkChoices[0]?.trim() !== 'Tee off among the trees' || parkNumbers.join(',') !== '01,02,03,04,05') browserErrors.push(`${viewport.name} ${route}: Tee off is not the first numbered park choice`);
+            if (parkChoices[0]?.trim() !== 'Tee off among the trees' || parkNumbers.join(',') !== '01,02,03,04' || parkChoices[3]?.trim() !== 'Keep the forest thriving') browserErrors.push(`${viewport.name} ${route}: Parks must have four distinct choices, with golf first and consolidated stewardship fourth`);
             await page.locator('#parks-tab-trails').click();
             const trailWalk = page.locator('[data-trail-walk]');
             const trailHikers = trailWalk.locator('.trail-walk-hiker');

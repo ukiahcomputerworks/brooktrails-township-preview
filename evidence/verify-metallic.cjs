@@ -21,6 +21,9 @@ const fs=require('node:fs');
   for(const route of ['parks','contact']){
    await page.goto(base+'/'+route+'/'+(process.env.SITE_BASE?'':'index.html')+(route==='parks'?'#parks-panel-gather':''));
    if(route==='parks')await page.reload();
+   if(route==='parks'){
+    if(await page.locator('[data-gather-detail]>small').evaluateAll(es=>es.some(e=>e.textContent!=='Rent The')))throw Error('Rental label mismatch');
+   }
    const button=page.locator(route==='parks'?'.gather-ticket:visible':'.district-desk-course');
    if(route==='contact'&&await page.locator('.secure-contact-note').count())throw Error('Removed contact callout remains');
    if(await button.locator('a,button').count())throw Error('Nested action');

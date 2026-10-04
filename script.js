@@ -294,7 +294,7 @@
       });
     });
 
-    const requestedPanel = window.location.hash.slice(1);
+    const requestedPanel = window.location.hash.slice(1) === 'parks-panel-story' ? 'parks-panel-care' : window.location.hash.slice(1);
     const requestedTab = tabs.find((tab) => tab.dataset.storyTarget === requestedPanel);
     activate(requestedTab || tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0]);
   });
