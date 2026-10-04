@@ -68,3 +68,7 @@ Gather venue variant (Parks only): two setting buttons share the field-stage fon
 | Accessibility / 404 | Creek | Recovery and access | Plain action links | Fast return to a valid destination |
 
 The generated pages use one shared stylesheet and one progressive-enhancement script. Core navigation and content remain usable without JavaScript. Autocomplete, exact-panel opening, retained-source expansion, hover rewards, reveal motion, and mobile navigation enhance directness without hiding the underlying links or records.
+
+## Metallic emerald action variant — 2026-10-04
+
+Gathering's selected application ticket is one full-surface anchor, not a card containing a second button. The District Desk course telephone tile uses the same metallic emerald variant: brushed green gradient, beveled edge, cream text, and a restrained six-second diagonal light sweep. Existing PDF and telephone destinations are preserved. Visible inset keyboard focus survives clipped corners; reduced-motion preferences disable the sweep. No Fire-site or production change is included.

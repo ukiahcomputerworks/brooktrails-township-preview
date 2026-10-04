@@ -309,10 +309,10 @@ try {
               const ticket = gathering.locator(`[data-gather-detail="${venue}"]`);
               if (!await ticket.isVisible() || await choice.getAttribute('aria-pressed') !== 'true') browserErrors.push(`${viewport.name} ${route}: ${venue} does not reveal its application`);
               if (await gathering.locator('[data-gather-detail]:visible').count() !== 1) browserErrors.push(`${viewport.name} ${route}: gathering reveals more than one application`);
-              const href = await ticket.locator('a').getAttribute('href');
+              const href = await ticket.getAttribute('href');
               const expected = venue === 'center' ? '../documents/677c29-1f23adf09a824ed3b460bc2b8e8f3be6.pdf' : '../documents/677c29-f292ed6ac4104df798a5efce3c774ce9.pdf';
               if (href !== expected) browserErrors.push(`${viewport.name} ${route}: ${venue} links to the wrong application`);
-              if ((await choice.boundingBox()).height < 44 || (await ticket.locator('a').boundingBox()).height < 44) browserErrors.push(`${viewport.name} ${route}: gathering targets are smaller than 44px`);
+              if ((await choice.boundingBox()).height < 44 || (await ticket.boundingBox()).height < 44) browserErrors.push(`${viewport.name} ${route}: gathering targets are smaller than 44px`);
               await page.keyboard.press('Tab');
               await choice.focus();
               if (await choice.evaluate(element => getComputedStyle(element).outlineStyle) === 'none') browserErrors.push(`${viewport.name} ${route}: gathering choice lacks keyboard focus`);
