@@ -71,6 +71,10 @@ The generated pages use one shared stylesheet and one progressive-enhancement sc
 
 ## Metallic emerald action variant — 2026-10-04
 
+Shared spacing pass, 2026-10-05: sections and landscape/history bands use 2–4.5rem vertical padding; inner-page heroes use 2–3.5rem. Intro spacing is .6rem with a 1.25rem bottom gap. Short story panels and text-only heroes no longer reserve a fixed minimum height. Home hub gutters are 1.25–2.5rem; mobile hero bottom padding is 3rem; footer padding is 2.5rem/2rem. Text sizes, tap targets, artwork and animation dimensions are preserved. Compact-laptop hero composition and print styles remain intentional exceptions.
+
+Home landscape density, 2026-10-05: below 64rem, section padding is 2rem, text/stat gap 1rem, and statistics become compact number-plus-caption rows instead of tall stacked blocks. Copy/numbers remain unchanged; captions increase to .9rem for readability. Desktop statistic layout is preserved, with the shared tighter section padding.
+
 Home outline variant, 2026-10-05: Services, Parks & Places, District & Board and Discover Brooktrails get a 1.5px masked green-metal perimeter with moving reflection bands. Transparent interior preserves their unique artwork; hover/keyboard focus strengthen the edge to 2px. It never intercepts clicks. Reduced motion keeps a static edge. Owner added the fourth hub to scope; all four now share this edge.
 
 Rental heading: Rent The and the venue name share display font, size, 700 weight, line height and normal tracking/case. Both use 1.4rem ordinarily and 1rem on compact laptops. These are two lines of the same heading, not an eyebrow plus title.

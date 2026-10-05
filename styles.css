@@ -184,3 +184,24 @@ p{margin:0 0 1.15rem}
 .hub-springboard:hover .hub-metal-edge,.hub-springboard:focus-visible .hub-metal-edge{padding:2px;filter:brightness(1.15)}
 @keyframes hub-metal-glint{0%,12%{background-position:115% center}62%,100%{background-position:-15% center}}
 @media(prefers-reduced-motion:reduce){.hub-metal-edge{animation:none;background-position:50% center}}
+/* Shared density pass: content sets height; retain comfortable text and tap targets. */
+@media screen{
+ .section{padding:clamp(2rem,5vw,4.5rem) 0}
+ .page-hero{padding:clamp(2rem,4vw,3.5rem) 0}
+ .page-hero-copy>p:last-child{margin-bottom:0}
+ .section-intro{gap:.6rem;margin-bottom:1.25rem}
+ .section-intro>p:last-child{margin-bottom:0}
+ .story-deck-stage{min-height:0}
+ .hub-springboards{gap:clamp(1.25rem,3vw,2.5rem)}
+ .landscape-band,.history-band{padding:clamp(2rem,5vw,4.5rem) 0}
+ .site-footer{padding-top:2.5rem}
+ .footer-grid{padding-bottom:2rem}
+}
+@media screen and (max-width:63.99rem){
+ .story-grid,.two-column,.split-feature,.landscape-grid,.page-hero-grid{gap:1.25rem}
+ .home-hero-grid{min-height:0}
+ .home-hero-copy{padding-bottom:3rem}
+ .story-deck-stage{padding:1.25rem}
+}
+@media screen and (min-width:64rem) and (min-height:50.01rem){.page-hero-grid{min-height:0}}
+@media(max-width:63.99rem){.page-home .landscape-band{padding:2rem 0}.page-home .landscape-grid{gap:1rem}.page-home .landscape-grid>div:first-child>p:last-child{margin-bottom:0}.page-home .stat-stack{gap:.5rem}.page-home .stat-stack>div{display:grid;grid-template-columns:5.5rem minmax(0,1fr);align-items:center;gap:.75rem;padding:.75rem 1rem}.page-home .stat-stack strong{font-size:2rem;line-height:1.1}.page-home .stat-stack span{font-size:.9rem;line-height:1.4}}
