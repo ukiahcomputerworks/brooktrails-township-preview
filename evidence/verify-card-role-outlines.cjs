@@ -7,7 +7,7 @@ const {chromium}=require('playwright');const fs=require('node:fs');
   const cards=p.locator('.metal-outline-card');
   const audit=await cards.evaluateAll(es=>es.map(e=>{const edges=e.querySelectorAll(':scope>.hub-metal-edge'),s=edges[0]?getComputedStyle(edges[0]):null;return {role:e.className,edges:edges.length,hidden:edges[0]?.getAttribute('aria-hidden'),thickness:s?.paddingTop,pointer:s?.pointerEvents,mask:s?.maskComposite};}));
   if(audit.some(e=>e.edges!==1||e.hidden!=='true'||e.thickness!=='1.5px'||e.pointer!=='none'||!e.mask.includes('exclude')))throw Error('Card edge mismatch '+route+' '+width+JSON.stringify(audit));
-  if(await p.locator('.nav-list .hub-metal-edge,.text-link .hub-metal-edge,.document-list .hub-metal-edge,.source-archive summary .hub-metal-edge').count())throw Error('Outline leaked into unrelated role');
+  if(await p.locator('.nav-list .hub-metal-edge,.text-link .hub-metal-edge,.source-archive summary .hub-metal-edge').count())throw Error('Outline leaked into unrelated role');
   const roles={};for(const card of audit)roles[card.role]=(roles[card.role]||0)+1;matrix.push({route:route||'home',width,cards:audit.length,roles});
   if(route==='government'){
    const members=p.locator('.board-member');if(await members.count()!==5)throw Error('Board rows changed');

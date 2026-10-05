@@ -358,6 +358,12 @@
   const resourceHeading = document.querySelector('[data-resource-heading]');
   const resourceResults = document.querySelector('.library-results');
   const resourceCount = document.querySelector('[data-resource-count]');
+  const documentGroups = [...document.querySelectorAll('[data-document-group]')];
+  let wasSearching = false;
+  const browseOpen = new Map();
+  documentGroups.forEach(group => group.addEventListener('toggle', () => {
+    if (!library?.classList.contains('is-searching')) browseOpen.set(group, group.open);
+  }));
   if (search && items.length) {
     const requestedCategory = new URLSearchParams(window.location.search).get('category');
     const requestedQuery = new URLSearchParams(window.location.search).get('q');
@@ -367,6 +373,8 @@
 
     const filterResources = () => {
       const query = search.value.trim().toLowerCase();
+      if (query && !wasSearching) documentGroups.forEach(group => browseOpen.set(group, group.open));
+      library?.classList.toggle('is-searching', Boolean(query));
       let visible = 0;
       items.forEach((item) => {
         const matchesQuery = !query || item.dataset.search.includes(query);
@@ -377,7 +385,14 @@
       });
       if (empty) empty.hidden = visible !== 0;
       if (resourceCount) resourceCount.textContent = `${visible} ${visible === 1 ? 'file' : 'files'}`;
-      if (resourceHeading && query) resourceHeading.textContent = `Search results for “${search.value.trim()}”`;
+      documentGroups.forEach(group => {
+        const count = [...group.querySelectorAll('[data-resource-item]')].filter(item => !item.hidden).length;
+        group.hidden = count === 0;
+        group.querySelector('[data-document-group-count]').textContent = `${count} ${count === 1 ? 'file' : 'files'}`;
+        group.open = query ? true : (browseOpen.get(group) ?? false);
+      });
+      if (resourceHeading) resourceHeading.textContent = query ? `Search results for “${search.value.trim()}”` : (shelves.find(shelf => shelf.dataset.resourceCategory === activeCategory)?.querySelector('strong')?.textContent || 'Documents');
+      wasSearching = Boolean(query);
     };
 
     const selectShelf = (shelf, { reveal = false } = {}) => {

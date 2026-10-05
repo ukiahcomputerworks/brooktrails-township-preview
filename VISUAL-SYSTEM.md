@@ -1,5 +1,13 @@
 # Brooktrails visual system: Redwood Afterglow
 
+## Document rows and disclosures, 2026-10-05
+
+Resources now uses five native expandable document groups: Applications, Maps & plans, Policies & rules, Reports & district records, History & guides. A file belongs to exactly one group; the seven existing task shelves retain their overlapping category memberships and counts. Groups collapse for browsing. Filtering opens matching rows directly, hides group headings, then restores browsing disclosure choices when cleared. Native details stay open without JavaScript so all files remain available.
+
+Shared document-row/resource-link anatomy: readable title, separate PDF/DOCX and KB/MB metadata, Open arrow at right, dark forest background with approved 1.5px metallic green perimeter/glint. Metadata uses the muted text palette for readability. Keyboard focus and static reduced-motion metal remain. Ordinary document rows in Water, Planning, Government and Parks share this treatment. Full-surface rental/buttons and rustic signs intentionally retain their approved roles. Source files, Fire exclusions, destinations and full-text index coverage are unchanged.
+
+Evidence: evidence/verify-document-rows.cjs tests 47 unique files, disclosures, direct/empty/cleared search, keyboard, no-JS access, file anatomy and reduced motion across five routes at 390/1440px. The shared clickable-role audit still covers all eleven main routes; full regression checks 43 HTML files and 50 browser cases.
+
 ## Brand roles
 
 - Redwood night `#06110F`: the immersive civic field and forest-depth background
