@@ -7,7 +7,7 @@ const out='evidence/'+(process.env.SITE_BASE?'test-output-live':'test-output');f
 for(const width of [390,1440]){
 const page=await browser.newPage({viewport:{width,height:1000}});
 await page.goto(base+'/'+(process.env.SITE_BASE?'':'index.html'));
-if(await page.locator('.hub-metal-edge').count()!==4)throw Error('Outline scope differs from four requested hubs');
+if(await page.locator('.hub-springboard .hub-metal-edge').count()!==4)throw Error('Outline scope differs from four requested hubs');
 for(const [kind,href] of [['current','services/'],['trailhead','parks/'],['docket','government/'],['compass','history/']]){
 const link=page.locator('.hub-'+kind),edge=link.locator('.hub-metal-edge');
 if(await link.getAttribute('href')!==href)throw Error('Hub destination changed');
