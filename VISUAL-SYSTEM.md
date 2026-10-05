@@ -71,6 +71,8 @@ The generated pages use one shared stylesheet and one progressive-enhancement sc
 
 ## Metallic emerald action variant — 2026-10-04
 
+Resources shelf outline, 2026-10-05: all seven library-shelf buttons reuse hub-metal-edge (1.5px metallic perimeter, 2px on hover/focus). Existing selected background and creek left-edge glow remain above the decorative border, with aria-pressed unchanged. Counts, filtering and result auto-scroll are unchanged. Reduced-motion freezes the glint; decoration is aria-hidden and pointer-events:none.
+
 District Desk contact-channel outline, 2026-10-05: Call, Email, Visit/Mail and Fax reuse the home hubs' 1.5px masked metallic green edge and animation. Call/Email retain tel/mailto links and stronger hover/focus edges; Visit/Mail and Fax remain informational (no pointer or fake click action). Shared reduced-motion rule freezes all decorative edges. No padding, content or destination changes.
 
 Shared spacing pass, 2026-10-05: sections and landscape/history bands use 2–4.5rem vertical padding; inner-page heroes use 2–3.5rem. Intro spacing is .6rem with a 1.25rem bottom gap. Short story panels and text-only heroes no longer reserve a fixed minimum height. Home hub gutters are 1.25–2.5rem; mobile hero bottom padding is 3rem; footer padding is 2.5rem/2rem. Text sizes, tap targets, artwork and animation dimensions are preserved. Compact-laptop hero composition and print styles remain intentional exceptions.
