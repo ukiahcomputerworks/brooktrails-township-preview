@@ -71,6 +71,8 @@ The generated pages use one shared stylesheet and one progressive-enhancement sc
 
 ## Metallic emerald action variant — 2026-10-04
 
+Home outline variant, 2026-10-05: Services, Parks & Places, District & Board and Discover Brooktrails get a 1.5px masked green-metal perimeter with moving reflection bands. Transparent interior preserves their unique artwork; hover/keyboard focus strengthen the edge to 2px. It never intercepts clicks. Reduced motion keeps a static edge. Owner added the fourth hub to scope; all four now share this edge.
+
 Rental heading: Rent The and the venue name share display font, size, 700 weight, line height and normal tracking/case. Both use 1.4rem ordinarily and 1rem on compact laptops. These are two lines of the same heading, not an eyebrow plus title.
 
 Parks stewardship consolidation: four distinct choices replace five. Care and the park promise share one Give back experience: forest emblem and acreage cue, two direct human-help actions, then expandable rules/plans/committee records. Original source facts and records remain; the former story hash opens the merged care panel.
