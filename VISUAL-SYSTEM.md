@@ -71,6 +71,8 @@ The generated pages use one shared stylesheet and one progressive-enhancement sc
 
 ## Metallic emerald action variant — 2026-10-04
 
+Card-role audit, 2026-10-05: a build-time outlineCardRoles decorator applies the existing transparent 1.5px hub-metal-edge to Board portrait rows, guided-journey anchors, story tab/destination cards, gathering choices, boxed resource links and common-tools tiles. Actual anchors/buttons retain focus/hover; Board portraits retain overflow and their higher z-index. Selected story left-edge bars remain above the border. No blanket anchor selector: ordinary word links, masthead/navigation, rustic sign links, native archive disclosures, informational process/stat blocks, and the proposed document-list redesign remain separate roles. Existing full green-metal buttons are unchanged.
+
 Resources shelf outline, 2026-10-05: all seven library-shelf buttons reuse hub-metal-edge (1.5px metallic perimeter, 2px on hover/focus). Existing selected background and creek left-edge glow remain above the decorative border, with aria-pressed unchanged. Counts, filtering and result auto-scroll are unchanged. Reduced-motion freezes the glint; decoration is aria-hidden and pointer-events:none.
 
 District Desk contact-channel outline, 2026-10-05: Call, Email, Visit/Mail and Fax reuse the home hubs' 1.5px masked metallic green edge and animation. Call/Email retain tel/mailto links and stronger hover/focus edges; Visit/Mail and Fax remain informational (no pointer or fake click action). Shared reduced-motion rule freezes all decorative edges. No padding, content or destination changes.

@@ -189,6 +189,11 @@ p{margin:0 0 1.15rem}
 .library-shelf:hover .hub-metal-edge,.library-shelf:focus-visible .hub-metal-edge{padding:2px;filter:brightness(1.15)}
 .library-shelf:focus-visible{outline:3px solid var(--lantern);outline-offset:3px}
 .library-shelf.is-active::before{z-index:5}
+.metal-outline-card{position:relative}
+.metal-outline-card:is(a,button){isolation:isolate}
+.metal-outline-card:hover>.hub-metal-edge,.metal-outline-card:focus-visible>.hub-metal-edge,.board-member:focus-within>.hub-metal-edge{padding:2px;filter:brightness(1.15)}
+.metal-outline-card:is(a,button):focus-visible{outline:3px solid var(--lantern);outline-offset:3px}
+.story-deck-tab.metal-outline-card::after{z-index:5}
 @keyframes hub-metal-glint{0%,12%{background-position:115% center}62%,100%{background-position:-15% center}}
 @media(prefers-reduced-motion:reduce){.hub-metal-edge{animation:none;background-position:50% center}}
 /* Shared density pass: content sets height; retain comfortable text and tap targets. */
