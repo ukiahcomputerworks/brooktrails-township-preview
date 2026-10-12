@@ -1,5 +1,9 @@
 # Brooktrails visual system: Redwood Afterglow
 
+## Golf address alignment, 2026-10-12
+
+The ball sits immediately behind the clubhead at ground level, centered at 101.5% of the address player's width and 90% of its height. Shared player dimensions determine both the resting ball and its flight origin, including the mobile override. The golfer draws above the ball; a smaller glow avoids a floating appearance. The 800ms address hold, four swing poses, replay and telephone reward remain unchanged. Cache key: 20261012-1. Automated geometry and replay checks run at 390, 768, 1080 and 1440 pixels; phone and desktop address screenshots are visually inspected.
+
 ## Document rows and disclosures, 2026-10-05
 
 Resources now uses five native expandable document groups: Applications, Maps & plans, Policies & rules, Reports & district records, History & guides. A file belongs to exactly one group; the seven existing task shelves retain their overlapping category memberships and counts. Groups collapse for browsing. Filtering opens matching rows directly, hides group headings, then restores browsing disclosure choices when cleared. Native details stay open without JavaScript so all files remain available.

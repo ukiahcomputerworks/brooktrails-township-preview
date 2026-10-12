@@ -385,13 +385,19 @@ try {
               playerImage:getComputedStyle(element.querySelector('.golf-player')).backgroundImage,
               phoneOpacity:Number.parseFloat(getComputedStyle(element.querySelector('.golf-phone')).opacity),
               ballLeft:element.querySelector('.golf-ball').getBoundingClientRect().left,
+              ballCenterY:element.querySelector('.golf-ball').getBoundingClientRect().top + element.querySelector('.golf-ball').getBoundingClientRect().height / 2,
+              ballCenterX:element.querySelector('.golf-ball').getBoundingClientRect().left + element.querySelector('.golf-ball').getBoundingClientRect().width / 2,
+              playerTop:element.querySelector('.golf-player').getBoundingClientRect().top,
+              playerHeight:element.querySelector('.golf-player').getBoundingClientRect().height,
               playerLeft:element.querySelector('.golf-player').getBoundingClientRect().left,
               playerRight:element.querySelector('.golf-player').getBoundingClientRect().right,
               fairwayLeft:element.querySelector('.golf-fairway').getBoundingClientRect().left,
             }));
             if (!focusHold.playerImage.includes('golfer-swing-address.png') || focusHold.phoneOpacity > .05) browserErrors.push(`${viewport.name} ${route}: golf scene does not hold the address position before swinging`);
             const ballAcrossPlayer = (focusHold.ballLeft - focusHold.playerLeft) / (focusHold.playerRight - focusHold.playerLeft);
-            if (ballAcrossPlayer < .72 || ballAcrossPlayer > .98 || focusHold.ballLeft < focusHold.fairwayLeft - 16) browserErrors.push(`${viewport.name} ${route}: golf ball is not aligned just beyond the clubhead on the fairway`);
+            const ballCenterAcrossPlayer = (focusHold.ballCenterX - focusHold.playerLeft) / (focusHold.playerRight - focusHold.playerLeft);
+            const ballCenterDownPlayer = (focusHold.ballCenterY - focusHold.playerTop) / focusHold.playerHeight;
+            if (ballAcrossPlayer < .96 || ballAcrossPlayer > .99 || Math.abs(ballCenterAcrossPlayer - 1.015) > .005 || Math.abs(ballCenterDownPlayer - .9) > .005 || focusHold.ballLeft < focusHold.fairwayLeft - 16) browserErrors.push(`${viewport.name} ${route}: golf ball is not immediately behind the clubhead at ground level`);
             if (viewport.name === 'mobile' && !liveBase) await golfScene.screenshot({ path:path.join(outputDir, 'parks-golf-address-mobile.png') });
             await page.waitForTimeout(750);
             const backswingImage = await golfPlayer.evaluate(element => getComputedStyle(element).backgroundImage);
