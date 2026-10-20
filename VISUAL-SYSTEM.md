@@ -115,3 +115,7 @@ The four homepage hubs and two visitor paths now have equal dimensions within th
 ## Public-content boundary, October 20, 2026
 
 Owner requirement: tell the finished story or remove the material. Resident pages must never expose migration archives, placeholder handoffs, review accounting or promises that content will be finished before publication. Source snapshots stay in coordination records. Obsolete routes may redirect to an actual destination; resident links must target that destination directly. The release link guard rejects migration-scaffold copy and archive handoffs.
+
+## Standalone next-step actions, October 20, 2026
+
+Owner requirement: no easy-to-miss wallflower action links. Standalone calls to action use the reusable button/action-link metallic fill, glow/sweep, compact fit and strong focus treatment; ordinary inline references and footer links keep their text role. Exact destinations and reduced-motion support are preserved.
