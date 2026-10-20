@@ -321,3 +321,5 @@ p{margin:0 0 1.15rem}
  .utility-dock-images img[src$="search-forms.jpg"]{width:100%;height:104.065041%;left:0;top:-4.065041%}
  .utility-dock-images img[src$="district-desk.jpg"]{width:102.605210%;height:126.804124%;left:-1.302605%;top:-12.371134%}
 }
+
+.office-mail-note{margin:.65rem 0 0;color:var(--muted);font-size:.85rem}
