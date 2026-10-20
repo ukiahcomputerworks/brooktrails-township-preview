@@ -312,3 +312,12 @@ p{margin:0 0 1.15rem}
  .hub-springboards .ranger-map{width:5rem;height:8rem}
  .hub-springboards .map-compass{width:3.4rem;height:3.4rem;right:0}
 }
+
+/* Normalize the visible JPEG frames, whose embedded outer padding differs. */
+@media screen {
+ .utility-dock.utility-dock-images>a{aspect-ratio:8/1;overflow:hidden}
+ .utility-dock-images img{position:absolute;max-width:none;object-fit:fill}
+ .utility-dock-images img[src$="pay-water-bill.jpg"]{width:102.4%;height:123.364486%;left:-1.3%;top:-17.757009%}
+ .utility-dock-images img[src$="search-forms.jpg"]{width:100%;height:104.065041%;left:0;top:-4.065041%}
+ .utility-dock-images img[src$="district-desk.jpg"]{width:102.605210%;height:126.804124%;left:-1.302605%;top:-12.371134%}
+}
