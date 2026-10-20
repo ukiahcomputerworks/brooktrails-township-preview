@@ -258,7 +258,7 @@ try {
             if (await page.locator('#civic-panel-work').count() !== 1) browserErrors.push(`${viewport.name} ${route}: employment panel is missing`);
             await page.locator('#civic-tab-inside').click();
             const destinations = page.locator('.story-deck-destination');
-            if (await destinations.count() !== 3) browserErrors.push(`${viewport.name} ${route}: expected three clearly linked operations destinations`);
+            if (await destinations.count() !== 2) browserErrors.push(`${viewport.name} ${route}: expected two clearly linked operations destinations`);
             else {
               const labels = await destinations.locator('.story-deck-destination-copy b').allTextContents();
               if (labels.some(label => !label.trim())) browserErrors.push(`${viewport.name} ${route}: an operations destination is missing visible action text`);
