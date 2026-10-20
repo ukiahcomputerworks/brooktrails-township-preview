@@ -323,3 +323,21 @@ p{margin:0 0 1.15rem}
 }
 
 .office-mail-note{margin:.65rem 0 0;color:var(--muted);font-size:.85rem}
+
+/* Independently timed sheen on the five homepage task cards. */
+@media screen {
+ .utility-dock-images>a,.intent-gateways .intent-path{--sheen-duration:7.1s;--sheen-delay:0s}
+ .utility-dock-images>a:nth-child(2){--sheen-duration:8.3s;--sheen-delay:-2.4s}
+ .utility-dock-images>a:nth-child(3){--sheen-duration:9.7s;--sheen-delay:-5.1s}
+ .intent-gateways .intent-build{--sheen-duration:10.9s;--sheen-delay:-7.2s}
+ .intent-gateways .intent-move{--sheen-duration:12.1s;--sheen-delay:-3.8s}
+ .utility-dock.utility-dock-images>a::before,.intent-gateways .intent-path::before{
+  content:"";display:block;position:absolute;z-index:3;inset:0;width:auto;height:auto;pointer-events:none;
+  background:linear-gradient(110deg,transparent 40%,rgba(185,255,241,.06) 46%,rgba(255,255,235,.28) 50%,rgba(242,189,101,.07) 54%,transparent 60%);
+  background-size:300% 100%;background-position:150% 0;transform:none;
+  animation:task-card-sheen var(--sheen-duration) ease-in-out var(--sheen-delay) infinite;
+ }
+ .intent-gateways .intent-path>.hub-metal-edge{animation-duration:var(--sheen-duration);animation-delay:var(--sheen-delay)}
+}
+@keyframes task-card-sheen{0%,6%{background-position:150% 0}28%,100%{background-position:-50% 0}}
+@media(prefers-reduced-motion:reduce){.utility-dock.utility-dock-images>a::before,.intent-gateways .intent-path::before{display:none;animation:none}}
