@@ -107,3 +107,7 @@ Gathering's selected application ticket is one full-surface anchor. The District
 ## October 20, 2026: site-wide compact layout
 
 Shared spacing tokens now use 12–16px sections, 8px phone outer margins, content-sized heroes/cards, compact directories, and preserved 44px primary phone controls. Standalone reviewer pages are included. Full route/component measurements and acceptance evidence: evidence/COMPACT-LAYOUT-2026-10-20.md.
+
+## Owner card refinements, October 20, 2026
+
+The four homepage hubs and two visitor paths now have equal dimensions within their groups using intrinsic grid sizing. Three owner-supplied JPG utility cards replace the text strip, with preserved destinations/accessible names and proportional display. See evidence/HOME-CARD-UPDATE-2026-10-20.md.
