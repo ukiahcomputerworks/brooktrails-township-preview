@@ -119,3 +119,7 @@ Owner requirement: tell the finished story or remove the material. Resident page
 ## Standalone next-step actions, October 20, 2026
 
 Owner requirement: no easy-to-miss wallflower action links. Standalone calls to action use the reusable button/action-link metallic fill, glow/sweep, compact fit and strong focus treatment; ordinary inline references and footer links keep their text role. Exact destinations and reduced-motion support are preserved.
+
+## Consistent section-label color, October 20, 2026
+
+Owner requested gray and light-green eyebrow labels match the existing turquoise labels. Standard .eyebrow labels, including route hero labels, now use --creek (#72e5d0) and their rule inherits currentColor. Generic paragraph rules exclude eyebrow labels so they cannot become gray. Explicit .eyebrow-light composition accents remain a separate named role. Eight routes at 390/1440px were checked for exact computed text/rule color equality.
