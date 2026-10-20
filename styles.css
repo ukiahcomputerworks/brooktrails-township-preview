@@ -196,24 +196,93 @@ p{margin:0 0 1.15rem}
 .story-deck-tab.metal-outline-card::after{z-index:5}
 @keyframes hub-metal-glint{0%,12%{background-position:115% center}62%,100%{background-position:-15% center}}
 @media(prefers-reduced-motion:reduce){.hub-metal-edge{animation:none;background-position:50% center}}
-/* Shared density pass: content sets height; retain comfortable text and tap targets. */
-@media screen{
- .section{padding:clamp(2rem,5vw,4.5rem) 0}
- .page-hero{padding:clamp(2rem,4vw,3.5rem) 0}
- .page-hero-copy>p:last-child{margin-bottom:0}
- .section-intro{gap:.6rem;margin-bottom:1.25rem}
- .section-intro>p:last-child{margin-bottom:0}
- .story-deck-stage{min-height:0}
- .hub-springboards{gap:clamp(1.25rem,3vw,2.5rem)}
- .landscape-band,.history-band{padding:clamp(2rem,5vw,4.5rem) 0}
- .site-footer{padding-top:2.5rem}
- .footer-grid{padding-bottom:2rem}
+/* Compact layout: shared spacing tokens, content-sized panels and close page edges. */
+@media screen {
+ :root{--shell:88rem;--section-space:1rem;--layout-gap:1rem}
+ .shell{width:min(calc(100% - 1.5rem),var(--shell))}
+ .section,.page-hero,.intent-section,.landscape-band,.history-band,.library-search-stage{padding:var(--section-space) 0}
+ .page-content>.section:first-child{padding-top:var(--section-space)}
+ .section-intro{gap:.5rem;margin-bottom:.75rem}
+ .section-intro>p:last-child,.page-hero-copy>p:last-child{margin-bottom:0}
+ .story-grid,.two-column,.split-feature,.landscape-grid,.page-hero-grid,.approval-intro,.moving-compass,.scope-map,.intent-gateways,.story-deck,.library-layout{gap:var(--layout-gap);align-items:start}
+ .service-grid,.action-grid,.contact-directory,.process,.move-checklist,.district-desk-layout,.district-desk-paths,.intent-gateways nav{gap:.5rem;align-items:start}
+ .page-hero-grid,.home-hero,.home-hero-grid,.home-hero-image,.page-hero-image,.service-card,.service-card.static,.story-deck-stage,.hub-springboard,.hub-compass,.forest-panel,.map-photo{min-height:0}
+ .home-hero-copy{padding:1rem 0;align-self:start}
+ .home-hero-copy h1{font-size:clamp(2.5rem,5vw,4.25rem);max-width:18ch}
+ .home-hero-image{position:relative;align-self:stretch}
+ .home-hero-image img{position:absolute;inset:0;width:100%;height:100%}
+ .hero-signal{gap:.4rem .85rem;margin-top:.75rem}
+ .button-row{gap:.5rem;margin-top:.75rem}
+ .home-hero-copy .button-row{margin-top:.75rem}
+ .quick-actions,.utility-dock{margin-top:0}
+ .quick-actions>a,.utility-dock>a{padding:.65rem .75rem}
+ .hub-springboards{gap:.75rem;align-items:start}
+ .hub-current,.hub-trailhead,.hub-docket,.hub-compass{padding:.75rem;gap:.5rem .75rem;margin-inline:0;grid-template-rows:auto auto;align-content:start;align-items:center}
+ .trail-post{min-height:9rem}
+ .current-gauge,.ranger-map{max-width:9rem}
+ .record-cabinet{max-width:10rem}
+ .hub-copy strong{font-size:clamp(1.65rem,2.6vw,2.5rem)}
+ .service-card,.resource-panel,.callout,.contact-directory>article,.contact-card,.district-desk-primary,.district-desk-secondary,.privacy-stop,.authority-note,.moving-question,.process>div,.move-checklist article,.history-timeline>div,.metric-row div{padding:1rem}
+ .service-card{gap:.3rem;align-self:start}
+ .service-card p{margin-bottom:.5rem}
+ .card-arrow{margin-top:.4rem}
+ .service-switchboard>a{padding:.65rem .25rem}
+ .story-deck-stage{padding:1rem;align-self:start}
+ .story-deck-tab,.story-deck-destination{padding:.65rem .75rem}
+ .story-deck-panel ol{gap:.4rem;margin:.75rem 0}
+ .story-deck-links,.story-deck-destinations{gap:.4rem;margin-top:.75rem}
+ .story-deck-panel li{padding-top:.55rem;padding-bottom:.55rem}
+ .story-deck-panel .button-row{margin-top:.75rem}
+ .library-shelf{padding:.65rem .75rem}
+ .document-list{gap:.35rem;margin:.5rem 0}
+ .document-row,.resource-panel a.document-row,.resource-link{padding:.5rem .75rem;gap:.25rem .6rem}
+ .document-group>summary{padding:.5rem .25rem}
+ .resource-panel a{padding:.55rem 0}
+ .archive-note{padding:.75rem;margin-bottom:.75rem}
+ .archive-list summary{padding:.65rem .75rem}
+ .archive-list details>div{padding:0 .75rem .75rem}
+ .district-desk-channel{padding:.65rem .75rem;align-self:start}
+ .district-desk-course{padding:.75rem;margin:.75rem 0}
+ .contact-list>div{padding:.6rem 0}
+ .approval-trail{gap:.5rem;margin-top:.75rem}
+ .approval-trail li,.scope-map dl div{padding:.75rem;gap:.75rem}
+ .stat-stack{gap:.5rem;align-items:start}
+ .stat-stack>div{padding:.75rem}
+ .feature-photo img,.split-feature img,.page-hero-image img{height:auto;min-height:0;max-height:20rem;object-fit:contain}
+ .split-feature .board-group-photo img{max-height:none;width:100%;height:auto;aspect-ratio:1170/724;object-fit:contain}
+ .page-hero-image img{max-height:18rem}
+ .site-footer{padding-top:1rem}
+ .footer-grid{padding-bottom:.75rem;gap:1rem;align-items:start}
+ .footer-grid p{margin-bottom:.5rem}
+ .footer-base{padding:.5rem 0;gap:.5rem}
+ .redirect-page{min-height:0;padding:1rem .75rem}
+}
+@media screen and (min-width:64rem){
+ .home-hero-copy{padding-left:max(.75rem,calc((100vw - var(--shell))/2))}
+ .masthead{min-height:4.25rem}
+ .nav-list{padding:.15rem 0}
 }
 @media screen and (max-width:63.99rem){
- .story-grid,.two-column,.split-feature,.landscape-grid,.page-hero-grid{gap:1.25rem}
- .home-hero-grid{min-height:0}
- .home-hero-copy{padding-bottom:3rem}
- .story-deck-stage{padding:1.25rem}
+ .home-hero-grid{width:min(calc(100% - 1.5rem),var(--shell))}
+ .page-home .landscape-band{padding:1rem 0}
+ .page-home .landscape-grid{gap:1rem}
+ .page-home .stat-stack{gap:.5rem}
+ .page-home .stat-stack>div{display:grid;grid-template-columns:5.5rem minmax(0,1fr);align-items:center;gap:.75rem;padding:.65rem .75rem}
+ .page-home .stat-stack strong{font-size:2rem;line-height:1.1}
+ .page-home .stat-stack span{font-size:.9rem;line-height:1.4}
 }
-@media screen and (min-width:64rem) and (min-height:50.01rem){.page-hero-grid{min-height:0}}
-@media(max-width:63.99rem){.page-home .landscape-band{padding:2rem 0}.page-home .landscape-grid{gap:1rem}.page-home .landscape-grid>div:first-child>p:last-child{margin-bottom:0}.page-home .stat-stack{gap:.5rem}.page-home .stat-stack>div{display:grid;grid-template-columns:5.5rem minmax(0,1fr);align-items:center;gap:.75rem;padding:.75rem 1rem}.page-home .stat-stack strong{font-size:2rem;line-height:1.1}.page-home .stat-stack span{font-size:.9rem;line-height:1.4}}
+@media screen and (max-width:37.99rem){
+ :root{--section-space:.75rem;--layout-gap:.75rem}
+ .shell{width:calc(100% - 1rem)}
+ .home-hero-grid{width:calc(100% - 1rem)}
+ .hub-current,.hub-trailhead,.hub-docket,.hub-compass{grid-template-columns:6rem minmax(0,1fr);padding:.65rem;gap:.5rem}
+ .current-gauge,.compass-rose{width:6rem}
+ .trail-post{min-height:8rem}
+ .hub-copy em{font-size:.85rem}
+ .hero-signal{display:flex}
+ .button,.button-small,.site-search,.utility-link,.nav-list a,.story-deck-tab,.library-shelf,.document-row,.resource-panel a,.story-deck-links a,.trail-actions a,.trail-plank-sign>a,.trail-walk-replay,.golf-replay,.board-member-trigger{min-height:44px}
+ .utility-link{display:inline-flex;align-items:center}
+ .story-deck-stage{padding:.75rem}
+ .site-footer nav a{display:flex;align-items:center;min-height:44px}
+ .site-footer nav{gap:0}
+}

@@ -5,3 +5,6 @@ evidence/source-capture/
 evidence/test-output/
 evidence/test-output-live/
 node_modules/
+
+# Python validation caches.
+__pycache__/
