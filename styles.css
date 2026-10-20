@@ -387,3 +387,9 @@ html{scroll-padding-top:calc(var(--sticky-header-height,9rem) + .75rem)}
 .page-parks .action-link::before{animation-duration:9.3s;animation-delay:-4s}
 .gather-confirm a.action-link::before{animation-duration:7.2s;animation-delay:-.6s}
 @media(prefers-reduced-motion:reduce){.action-link:hover,.gather-confirm a.action-link:hover{transform:none}}
+
+/* Keep venue artwork complete and rental actions sized to their content. */
+.gather-landscape{height:auto;aspect-ratio:640/210}
+.gather-landscape svg{width:100%;height:auto;aspect-ratio:640/210}
+.gather-ticket{display:inline-flex;align-items:center;width:fit-content;max-width:100%;min-height:44px;margin-top:.5rem;padding:.65rem .9rem}
+.gather-button-label{min-height:0;padding:0;border:0;font-size:.78rem;line-height:1.35}
