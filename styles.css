@@ -353,3 +353,28 @@ p{margin:0 0 1.15rem}
 /* Anchor destinations and sticky story panels clear the actual masthead height. */
 html{scroll-padding-top:calc(var(--sticky-header-height,9rem) + .75rem)}
 @media screen and (min-width:64rem){.story-deck-stage{top:calc(var(--sticky-header-height,9rem) + .75rem)}}
+
+/* Greenbelt disclosure: illuminated forest badge, metallic edge and clear toggle. */
+.page-parks .steward-records{padding:0;margin-top:.75rem;border:1px solid #75b879;background:linear-gradient(135deg,#0e2b22,#061510);box-shadow:0 0 18px rgba(136,209,112,.09)}
+.page-parks .steward-records summary{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:2.2rem minmax(0,1fr) 2rem;align-items:center;gap:.65rem;min-height:56px;padding:.65rem .8rem;list-style:none;color:#d9ffc0;background:radial-gradient(circle at 8% 50%,rgba(162,239,119,.19),transparent 45%),linear-gradient(110deg,#183f2e,#0b221b 65%,#1c3927);border-top:1px solid #e3ffc2;box-shadow:inset 3px 0 #a8e981,inset 0 -1px rgba(182,241,148,.35);transition:background .2s,box-shadow .2s,color .2s}
+.page-parks .steward-records summary::-webkit-details-marker{display:none}
+.page-parks .steward-records summary::marker{content:""}
+.page-parks .steward-records summary::after{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(231,255,197,.22) 49%,transparent 62%);transform:translateX(-135%);animation:emerald-metal-sweep 8.5s ease-in-out -2s infinite}
+.page-parks .steward-records summary>*{position:relative;z-index:1}
+.page-parks .steward-summary-title{font-family:var(--display);font-size:clamp(1rem,1.6vw,1.15rem);font-weight:900;line-height:1.2;letter-spacing:-.02em}
+.page-parks .steward-seal{display:grid;place-items:center;width:2.2rem;height:2.2rem;border:1px solid #a2da87;border-radius:50%;color:#d7ffb2;background:radial-gradient(circle,#426d3b,#122d20);box-shadow:0 0 13px rgba(163,233,116,.2);transition:transform .2s}
+.page-parks .steward-seal .icon{width:1.5rem;height:1.5rem}
+.page-parks .steward-toggle{width:2rem;height:2rem;border:1px solid #9dd47f;border-radius:50%;background:rgba(168,219,114,.1)}
+.page-parks .steward-toggle::before,.page-parks .steward-toggle::after{content:"";position:absolute;left:calc(50% - .4rem);top:calc(50% - 1px);width:.8rem;height:2px;background:#e1ffc7;transition:transform .25s}
+.page-parks .steward-toggle::after{transform:rotate(90deg)}
+.page-parks .steward-records[open] .steward-toggle::after{transform:rotate(0)}
+.page-parks .steward-records[open]{border-color:#c9ed9c;box-shadow:0 0 20px rgba(147,216,101,.14)}
+.page-parks .steward-records[open] summary{color:#fff0c4;box-shadow:inset 3px 0 #f2bd65,inset 0 -1px rgba(242,189,101,.5)}
+.page-parks .steward-records summary:hover{color:#fff8dc;box-shadow:inset 3px 0 #e5ffc5,inset 0 0 22px rgba(169,231,120,.12)}
+.page-parks .steward-records summary:hover .steward-seal{transform:rotate(-6deg)}
+.page-parks .steward-records summary:focus-visible{outline:3px solid var(--lantern);outline-offset:3px}
+.page-parks .steward-records>p{margin:.75rem .8rem}
+.page-parks .steward-records>.story-deck-links{margin:.5rem 0 0;padding:0 .75rem .75rem}
+.page-parks .steward-records[open]>:not(summary){animation:greenbelt-reveal .25s ease both}
+@keyframes greenbelt-reveal{from{opacity:0;transform:translateY(-.2rem)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.page-parks .steward-records summary::after{display:none}}
