@@ -202,6 +202,7 @@ p{margin:0 0 1.15rem}
  .shell{width:min(calc(100% - 1.5rem),var(--shell))}
  .section,.page-hero,.intent-section,.landscape-band,.history-band,.library-search-stage{padding:var(--section-space) 0}
  .page-content>.section:first-child{padding-top:var(--section-space)}
+ h2{font-size:clamp(1.8rem,3vw,3rem)}
  .section-intro{gap:.5rem;margin-bottom:.75rem}
  .section-intro>p:last-child,.page-hero-copy>p:last-child{margin-bottom:0}
  .story-grid,.two-column,.split-feature,.landscape-grid,.page-hero-grid,.approval-intro,.moving-compass,.scope-map,.intent-gateways,.story-deck,.library-layout{gap:var(--layout-gap);align-items:start}
@@ -249,6 +250,7 @@ p{margin:0 0 1.15rem}
  .stat-stack{gap:.5rem;align-items:start}
  .stat-stack>div{padding:.75rem}
  .feature-photo img,.split-feature img,.page-hero-image img{height:auto;min-height:0;max-height:20rem;object-fit:contain}
+ .split-feature .board-group-photo{width:min(100%,24rem)}
  .split-feature .board-group-photo img{max-height:none;width:100%;height:auto;aspect-ratio:1170/724;object-fit:contain}
  .page-hero-image img{max-height:18rem}
  .site-footer{padding-top:1rem}
