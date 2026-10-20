@@ -349,3 +349,7 @@ p{margin:0 0 1.15rem}
 .district-desk-course span{font-size:.75rem}
 
 .ordinance-text{max-width:74ch;line-height:1.65}.ordinance-text p{margin:.75rem 0}
+
+/* Anchor destinations and sticky story panels clear the actual masthead height. */
+html{scroll-padding-top:calc(var(--sticky-header-height,9rem) + .75rem)}
+@media screen and (min-width:64rem){.story-deck-stage{top:calc(var(--sticky-header-height,9rem) + .75rem)}}

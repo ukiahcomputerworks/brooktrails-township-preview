@@ -25,6 +25,9 @@
   }
 
   if (header) {
+    const updateHeaderHeight = () => document.documentElement.style.setProperty('--sticky-header-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
+    updateHeaderHeight();
+    new ResizeObserver(updateHeaderHeight).observe(header);
     const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
@@ -288,6 +291,26 @@
     const requestedPanel = window.location.hash.slice(1) === 'parks-panel-story' ? 'parks-panel-care' : window.location.hash.slice(1);
     const requestedTab = tabs.find((tab) => tab.dataset.storyTarget === requestedPanel);
     activate(requestedTab || tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0]);
+    const alignRequestedPanel = () => {
+      const id = window.location.hash.slice(1) === 'parks-panel-story' ? 'parks-panel-care' : window.location.hash.slice(1);
+      const targetTab = tabs.find((tab) => tab.dataset.storyTarget === id);
+      if (!targetTab || !stage) return;
+      activate(targetTab);
+      stage.classList.remove('is-receiving');
+      requestAnimationFrame(() => {
+        stage.scrollIntoView({ behavior:'instant', block:'start' });
+        const golfScene = stage.querySelector('[data-story-panel]:not([hidden]) [data-golf-reveal]');
+        if (golfScene && golfScene.getBoundingClientRect().bottom > window.innerHeight) {
+          golfScene.scrollIntoView({ behavior:'instant', block:'start' });
+        }
+      });
+    };
+    if (requestedTab) {
+      if (document.readyState === 'complete') alignRequestedPanel();
+      else window.addEventListener('load', alignRequestedPanel, { once:true });
+    }
+    window.addEventListener('hashchange', alignRequestedPanel);
+
   });
 
   document.querySelectorAll('[data-gather]').forEach((experience) => {
