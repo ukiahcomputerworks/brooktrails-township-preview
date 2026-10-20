@@ -341,3 +341,9 @@ p{margin:0 0 1.15rem}
 }
 @keyframes task-card-sheen{0%,6%{background-position:150% 0}28%,100%{background-position:-50% 0}}
 @media(prefers-reduced-motion:reduce){.utility-dock.utility-dock-images>a::before,.intent-gateways .intent-path::before{display:none;animation:none}}
+
+/* Golf phone action fits its label instead of filling the entire side panel. */
+.district-desk-course{width:max-content;max-width:100%;min-height:44px;gap:.2rem;padding:.6rem .8rem;margin:.65rem 0;line-height:1.25}
+.district-desk-course strong{font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.15;white-space:nowrap}
+.district-desk-course small{font-size:.6rem}
+.district-desk-course span{font-size:.75rem}
