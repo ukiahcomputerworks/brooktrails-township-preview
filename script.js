@@ -235,15 +235,6 @@
     node.textContent = new Date().getFullYear();
   });
 
-  const openArchiveTarget = () => {
-    const archiveTarget = window.location.hash ? document.querySelector(`.archive-list ${window.location.hash}`) : null;
-    if (!(archiveTarget instanceof HTMLDetailsElement)) return;
-    archiveTarget.open = true;
-    requestAnimationFrame(() => archiveTarget.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' }));
-  };
-  openArchiveTarget();
-  window.addEventListener('hashchange', openArchiveTarget);
-
   document.querySelectorAll('[data-story-deck]').forEach((deck) => {
     const tabs = [...deck.querySelectorAll('[data-story-target]')];
     const panels = [...deck.querySelectorAll('[data-story-panel]')];

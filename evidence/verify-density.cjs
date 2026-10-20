@@ -4,7 +4,7 @@ const fs=require('fs');
 const phase=process.env.DENSITY_PHASE||'before',live=process.env.SITE_BASE;
 const root=process.cwd(),out='evidence/test-output/density';fs.mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
-const routes=['','services/','water/','parks/','planning/','moving/','government/','history/','resources/','archive/','contact/','404.html','deliverables/town-manager-proposal.html','deliverables/content-migration-review.html'];
+const routes=['','services/','water/','parks/','planning/','moving/','government/','history/','resources/','ordinance-63/','contact/','404.html','deliverables/town-manager-proposal.html','deliverables/content-migration-review.html'];
 const results=[];
 for(const width of [1440,768,390,320]){
  const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'});

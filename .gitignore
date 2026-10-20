@@ -8,3 +8,6 @@ node_modules/
 
 # Python validation caches.
 __pycache__/
+
+# Migration snapshots belong in private coordination evidence, never Pages.
+evidence/source-content-*/

@@ -1,5 +1,6 @@
 """Fail a release on legacy-site handoffs, placeholder links or missing local targets."""
 import json
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 import subprocess
@@ -30,7 +31,14 @@ def check(root):
         page = root / name
         parser = Links()
         parser.feed(page.read_text(encoding='utf-8-sig'))
+        if not name.startswith('deliverables/') and '<meta http-equiv="refresh"' not in page.read_text(encoding='utf-8-sig'):
+            visible = re.sub(r'<[^>]+>', ' ', page.read_text(encoding='utf-8-sig')).lower()
+            for phrase in ['retained source archive', 'nothing disappears in the redesign', 'content parity checks', 'source snapshot:']:
+                if phrase in visible:
+                    failures.append(f'{name}: public migration scaffolding: {phrase}')
         for href in parser.links:
+            if not name.startswith('deliverables/') and re.search(r'(?:^|/)archive(?:/|#|$)', urlsplit(href).path):
+                failures.append(f'{name}: public archive handoff {href}')
             checked += 1
             url = urlsplit(href)
             if url.hostname and url.hostname.lower() in blocked and href not in config.get('approvedExternalActions', {}).get(name, []):
@@ -50,6 +58,14 @@ def check(root):
                         dest.feed(target.read_text(encoding='utf-8-sig'))
                     if unquote(url.fragment) not in dest.ids:
                         failures.append(f'{name}: missing anchor {href}')
+    index_path = root / 'search-index.json'
+    if index_path.exists():
+        for entry in json.loads(index_path.read_text(encoding='utf-8')):
+            if re.search(r'(?:^|/)archive(?:/|#|$)', entry.get('href', '')):
+                failures.append('search-index.json: public archive handoff')
+    raw_snapshots = subprocess.check_output(['git', '-C', str(root), 'ls-files', 'evidence/source-content-*'], text=True).strip()
+    if raw_snapshots:
+        failures.append('Raw migration snapshots must remain outside the published tree')
     if failures:
         raise SystemExit('Release link check failed:\n' + '\n'.join(failures))
     print(f'PASS {checked} links: no legacy-site handoffs, placeholders or missing local targets')

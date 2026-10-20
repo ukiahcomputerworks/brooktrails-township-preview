@@ -111,3 +111,7 @@ Shared spacing tokens now use 12–16px sections, 8px phone outer margins, conte
 ## Owner card refinements, October 20, 2026
 
 The four homepage hubs and two visitor paths now have equal dimensions within their groups using intrinsic grid sizing. Three owner-supplied JPG utility cards replace the text strip, with preserved destinations/accessible names and proportional display. See evidence/HOME-CARD-UPDATE-2026-10-20.md.
+
+## Public-content boundary, October 20, 2026
+
+Owner requirement: tell the finished story or remove the material. Resident pages must never expose migration archives, placeholder handoffs, review accounting or promises that content will be finished before publication. Source snapshots stay in coordination records. Obsolete routes may redirect to an actual destination; resident links must target that destination directly. The release link guard rejects migration-scaffold copy and archive handoffs.

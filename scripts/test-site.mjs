@@ -81,7 +81,7 @@ const server = liveBase ? null : createServer(async (req, res) => {
 
 if (server) await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const base = liveBase || `http://127.0.0.1:${server.address().port}`;
-const routes = ['/', '/services/', '/water/', '/parks/', '/planning/', '/moving/', '/government/', '/history/', '/resources/', '/archive/', '/contact/'];
+const routes = ['/', '/services/', '/water/', '/parks/', '/planning/', '/moving/', '/government/', '/history/', '/resources/', '/ordinance-63/', '/contact/'];
 const separatedFireRoutes = ['/fire/', '/about-brooktrails-fire-department/', '/brooktrails-fire-department/', '/emergency-services/', '/fire-department-links/'];
 const viewports = [{ name:'compactLaptop', width:1080, height:583 }, { name:'laptop', width:1513, height:618 }, { name:'desktop', width:1440, height:1000 }, { name:'mobile', width:390, height:844 }];
 const browserErrors = [];
@@ -358,7 +358,7 @@ try {
             if (Number.parseFloat(await trailWalk.locator('.trail-walk-right-one').evaluate(element => getComputedStyle(element).opacity)) < .98) browserErrors.push(`${viewport.name} ${route}: Replay the hike did not restart on the right foot`);
             await page.locator('#parks-tab-golf').click();
             if (await page.locator('a[href="../contact/?topic=trails"]').count() !== 2) browserErrors.push(`${viewport.name} ${route}: current conditions should appear once on the sign and once in greenbelt-care guidance`);
-            if (await page.locator('a[href="../archive/#source-ordinance-63"]').count() !== 1) browserErrors.push(`${viewport.name} ${route}: Ordinance 63 does not deep-link to its retained source`);
+            if (await page.locator('a[href="../ordinance-63/"]').count() !== 1) browserErrors.push(`${viewport.name} ${route}: Ordinance 63 does not link to the park ordinance`);
             if (await page.locator('a[href="../documents/brooktrails-hiking-trail-map-reader.pdf"]').count() !== 1) browserErrors.push(`${viewport.name} ${route}: district trail map should appear once on the rustic sign`);
             if (await page.locator('a[href="https://www.trailforks.com/region/brooktrails-greenbelt-26604/"]').count() !== 1) browserErrors.push(`${viewport.name} ${route}: live navigation should appear once on the rustic sign`);
             const golfScene = page.locator('[data-golf-reveal]');
@@ -481,7 +481,7 @@ try {
     const finalPath = new URL(page.url()).pathname;
     results.push({ route, viewport:'redirect', status:response?.status(), finalPath });
     if (response?.status() !== 200) browserErrors.push(`redirect ${route}: HTTP ${response?.status()}`);
-    if (!finalPath.endsWith('/archive/')) browserErrors.push(`redirect ${route}: expected retained archive, reached ${finalPath}`);
+    if (!finalPath.endsWith('/btfd-preview/')) browserErrors.push(`redirect ${route}: expected separate Fire website, reached ${finalPath}`);
     await page.close();
   }
   await redirectContext.close();
@@ -507,10 +507,10 @@ try {
   const deepLinkPage = await deepLinkContext.newPage();
   await deepLinkPage.goto(`${base}/government/#civic-panel-meeting`, { waitUntil:'networkidle', timeout:30000 });
   if (!await deepLinkPage.locator('#civic-panel-meeting').isVisible()) browserErrors.push('deep link /government/#civic-panel-meeting did not open the meeting panel');
-  await deepLinkPage.goto(`${base}/archive/#source-ordinance-63`, { waitUntil:'networkidle', timeout:30000 });
-  if (!await deepLinkPage.locator('#source-ordinance-63').evaluate(element => element.open)) browserErrors.push('deep link /archive/#source-ordinance-63 did not open the retained source');
-  await deepLinkPage.goto(`${base}/archive/#source-the-essence-of-brooktrails`, { waitUntil:'networkidle', timeout:30000 });
-  if (!await deepLinkPage.locator('#source-the-essence-of-brooktrails').evaluate(element => element.open)) browserErrors.push('deep link to the retained Brooktrails story did not open the source');
+  await deepLinkPage.goto(`${base}/ordinance-63/`, { waitUntil:'networkidle', timeout:30000 });
+  if (!await deepLinkPage.locator('h1').innerText().then(t=>t.toLowerCase().includes('public trust'))) browserErrors.push('Ordinance page did not tell the park story');
+  await deepLinkPage.goto(`${base}/archive/`, { waitUntil:'networkidle', timeout:30000 });
+  if (!new URL(deepLinkPage.url()).pathname.endsWith('/history/')) browserErrors.push('Removed archive did not lead to history');
   await deepLinkPage.close();
   await deepLinkContext.close();
 } finally {
