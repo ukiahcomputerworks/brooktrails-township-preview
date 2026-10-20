@@ -55,7 +55,7 @@ function icon(name) {
 }
 
 function siteSearchForm(p, id, className = 'site-search', placeholder = 'Search site') {
-  return `<form class="${className}" role="search" data-site-search data-search-index="${p}search-index.json" data-search-root="${p}">
+  return `<form class="${className}" role="search" data-site-search data-search-index="${p}search-index.json?v=20261020-8" data-search-root="${p}">
     <label class="sr-only" for="site-search-${id}">Search the Brooktrails site and document library</label>
     <span aria-hidden="true">⌕</span><input id="site-search-${id}" type="search" placeholder="${placeholder}" autocomplete="off" aria-autocomplete="list" aria-controls="site-search-results-${id}" aria-expanded="false" data-site-search-input>
     <div class="site-search-results" id="site-search-results-${id}" role="listbox" hidden data-site-search-results></div>

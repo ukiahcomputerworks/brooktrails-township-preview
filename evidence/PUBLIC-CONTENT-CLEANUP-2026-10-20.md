@@ -11,3 +11,5 @@ Release guard rejects obsolete public archive handoffs and migration-scaffold la
 Rollback: 26a41c1343495782824c393091e5cf475e2c12ca. Owner review remains separate from production migration.
 
 All 43 HTML files and all 50 local browser checks pass with zero static/browser errors, including direct park-ordinance navigation, all five Fire handoffs, old-archive redirect, all existing hub interactions, search and reduced motion. The full ordinance disclosure also passes phone/desktop expansion checks with all three legal sections and certification preserved. The shared web-development system validator passes.
+
+Live acceptance on layout release f5d83c388945ba5deda0dd3caa990b64f1883bc2 (Pages run 39474098383): all 43 HTML routes HTTPS/200/noindex; all three removed raw snapshot paths return 404; CSS/JS/search-index identity matches; 56 live density combinations pass. Focused phone/desktop browser checks pass for the old archive redirect to real History, direct Ordinance 63 search results and expanded ordinance text. Search-index URLs are versioned to prevent a cached old archive result surviving the cleanup.
