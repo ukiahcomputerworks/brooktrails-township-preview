@@ -27,8 +27,8 @@
     "G5": "not-applicable-preview-will-not-submit-forms-or-claim-delivery-sensitive-legacy-form-removed",
     "G6": "passed-2026-09-30-no-fake-forms-secrets-or-publishable-identity-data-form",
     "G7": "passed-2026-09-10-all-html-noindex-nofollow-noarchive",
-    "G8": "local-validation-in-progress-before-authorized-preview-publication",
-    "G9": "local-visitor-journey-release-verified-owner-review-pending",
+    "G8": "passed-2026-10-20-pages-5016542bc0fd20f560309211945faa4f2a2973d9-run-39466895506-all-43-live-html-routes-https-noindex-css-identity",
+    "G9": "live-fifty-six-density-checks-passed-owner-review-pending",
     "G10": "not-applicable-no-universal-learning-promotion-requested"
   },
   "exceptions": [],

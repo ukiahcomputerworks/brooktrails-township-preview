@@ -14,17 +14,17 @@ All 14 rendered pages at 1440, 768, 390 and 320px passed overflow and 16px maxim
 
 | Route | Desktop before / after px | Phone before / after px |
 |---|---:|---:|
-| home | 3754 / 2609 | 4624 / 3670 |
-| services/ | 2217 / 1634 | 2589 / 2214 |
-| water/ | 3918 / 2884 | 5954 / 5300 |
-| parks/ | 2544 / 1882 | 3556 / 2876 |
-| planning/ | 4548 / 3455 | 6501 / 5517 |
-| moving/ | 3132 / 2421 | 4637 / 3951 |
-| government/ | 2531 / 2101 | 3407 / 3098 |
-| history/ | 2899 / 2234 | 4313 / 3801 |
-| resources/ | 2917 / 2226 | 3426 / 2945 |
+| home | 3754 / 2167 | 4624 / 3627 |
+| services/ | 2217 / 1552 | 2589 / 2192 |
+| water/ | 3918 / 2725 | 5954 / 5256 |
+| parks/ | 2544 / 1861 | 3556 / 2859 |
+| planning/ | 4548 / 3266 | 6501 / 5440 |
+| moving/ | 3132 / 2340 | 4637 / 3924 |
+| government/ | 2531 / 1845 | 3407 / 3054 |
+| history/ | 2899 / 2131 | 4313 / 3745 |
+| resources/ | 2917 / 1998 | 3426 / 2912 |
 | archive/ | 4128 / 3465 | 4635 / 3930 |
-| contact/ | 1753 / 1338 | 2490 / 2122 |
+| contact/ | 1753 / 1300 | 2490 / 2071 |
 | 404.html | 1093 / 1000 | 1170 / 1000 |
 | deliverables/town-manager-proposal.html | 6781 / 4974 | 10522 / 8646 |
 | deliverables/content-migration-review.html | 3591 / 2803 | 9303 / 7550 |
@@ -38,3 +38,7 @@ Static link guard: 380 links pass; an injected old-site fallback was rejected. T
 Colophon: all 14 rendered pages and 29 redirects pass. Web-development system validator passes. No new content, routes, private data, forms or dependencies were introduced.
 
 Scope: authorized noindex Township GitHub Pages preview. Prior verified rollback: ccfbccdd4acb1aa1c141283521b423e8a1517912. District production and separate Fire ownership remain separately governed. Owner acceptance remains pending.
+
+Final layout source: 5016542bc0fd20f560309211945faa4f2a2973d9, cache key 20261020-2. Final visual review also reduced section-heading scale and limited the supporting Board photo to 24rem, preserving its full aspect ratio while removing the unused band beside the text.
+
+Externally verified: successful GitHub Pages run 39466895506 published layout source 5016542bc0fd20f560309211945faa4f2a2973d9. All 43 live HTML routes returned HTTPS/200/noindex. Published CSS matches the local stylesheet after LF/CRLF normalization. All 56 live route/viewport density checks passed. An additional 24 expanded-panel and search states at 320px passed locally. Full-page live desktop, 390px and 320px screenshots are saved in the ignored density evidence directory.
