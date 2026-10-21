@@ -123,3 +123,9 @@ Owner requirement: no easy-to-miss wallflower action links. Standalone calls to 
 ## Consistent section-label color, October 20, 2026
 
 Owner requested gray and light-green eyebrow labels match the existing turquoise labels. Standard .eyebrow labels, including route hero labels, now use --creek (#72e5d0) and their rule inherits currentColor. Generic paragraph rules exclude eyebrow labels so they cannot become gray. Explicit .eyebrow-light composition accents remain a separate named role. Eight routes at 390/1440px were checked for exact computed text/rule color equality.
+
+## Cross-site consistency review, October 20, 2026
+
+Bright gold/turquoise help panels use dark #10241e paragraph text. The callout selector must retain the same specificity as generic column paragraphs so muted dark-background text cannot override it. Decorative callout rings ignore pointer events. Library sidebars share the measured sticky-header clearance used by story panels, 12px below the header, instead of a fixed 160px offset.
+
+Contact office/golf cards already size independently to their content; no equal-height stretching is introduced. Reviewer deliverables intentionally keep their cream document composition. Resident page headings, turquoise standard eyebrows, metallic buttons, card groups, photographic crops and full gathering illustrations retain their approved roles.
