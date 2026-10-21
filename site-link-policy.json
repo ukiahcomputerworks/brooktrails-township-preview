@@ -4,12 +4,8 @@
     "www.btcsd.org"
   ],
   "approvedExternalActions": {
-    "index.html": [
-      "https://www.btcsd.org/"
-    ],
-    "water/index.html": [
-      "https://www.btcsd.org/"
-    ]
+    "index.html": [],
+    "water/index.html": []
   },
   "reason": "Preserve the existing district payment-access actions; reject source-comparison and obsolete page fallbacks."
 }
