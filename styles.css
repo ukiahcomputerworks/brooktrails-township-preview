@@ -305,7 +305,7 @@ p{margin:0 0 1.15rem}
 @media screen {
  .hub-springboards>.hub-springboard{display:block;position:relative;min-width:0;height:auto;aspect-ratio:2.56/1;overflow:hidden;padding:0;background:none;clip-path:none}
  .hub-springboards>.hub-springboard>.hub-artwork{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
- .hub-springboards>.hub-springboard>.hub-metal-edge{inset:0}
+ .hub-springboards>.hub-springboard>.hub-metal-edge{display:none}
 }
 @media screen and (max-width:63.99rem){.utility-dock-images{grid-template-columns:1fr;gap:.25rem}}
 
