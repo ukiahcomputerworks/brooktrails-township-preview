@@ -129,3 +129,7 @@ Owner requested gray and light-green eyebrow labels match the existing turquoise
 Bright gold/turquoise help panels use dark #10241e paragraph text. The callout selector must retain the same specificity as generic column paragraphs so muted dark-background text cannot override it. Decorative callout rings ignore pointer events. Library sidebars share the measured sticky-header clearance used by story panels, 12px below the header, instead of a fixed 160px offset.
 
 Contact office/golf cards already size independently to their content; no equal-height stretching is introduced. Reviewer deliverables intentionally keep their cream document composition. Resident page headings, turquoise standard eyebrows, metallic buttons, card groups, photographic crops and full gathering illustrations retain their approved roles.
+
+## Services desktop grid, October 20, 2026
+
+The four service-switchboard outcomes use a compact2x2 grid at64rem and above. Each action sits beneath its description beside the icon, instead of at the far right of a full-width row. Cards have a forest surface/border, visible focus and hover without shifting content. Narrower layouts retain their existing single column. The group measures231px tall versus322px before; card widths700px versus1408px at1440px viewport. All four destination links are unchanged.

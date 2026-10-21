@@ -1,0 +1,3 @@
+# Compact Services desktop cards, October20,2026
+
+Owner reported four horizontally stretched desktop service rows. Converted shared service-switchboard at64rem+ to a2x2 grid with the action directly below each description. Existing single-column phone/tablet layout and all four links retained. Desktop group height322px→231px; card width1408px→700px at1440/1920. Tested320/390/768/1080/1440/1920 for expected columns, action placement, no overflow and destination preservation; desktop screenshot inspected. Link guard391, colophon14/29, generator syntax and diff checks pass. CSS cache20261020-15. Reusable check: evidence/verify-services-grid.cjs.
